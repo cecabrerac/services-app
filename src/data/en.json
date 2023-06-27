@@ -1,0 +1,29 @@
+{
+  "header-title": "Translation Test",
+  "select-language": "Select language",
+  "unsubscribe": {
+    "withdrawal": "Withdrawal",
+    "help": "Help us improve: please answer this short survey and leave us your feedback about our services.",
+    "question1": "How satisfied are you with the company in general?",
+    "option1-1": "Very satisfied",
+    "option2-1": "Satisfied",
+    "option3-1": "Not very satisfied",
+    "option4-1": "Not at all satisfied",
+    "select-option": "Select an option.",
+    "question2": "How likely are you to recommend our products or services?",
+    "option1-2": "Very likely",
+    "option2-2": "Likely",
+    "option3-2": "Unlikely",
+    "option4-2": "Not at all likely",
+    "question3": "How would you rate the quality of the attention received?",
+    "option1-3": "Very good",
+    "option2-3": "Good",
+    "option3-3": "Fair",
+    "option4-3": "Poor",
+    "comment": "Leave us an additional comment?",
+    "comment-placeholder": "Write your comment here (minimum 7 characters)",
+    "invalid-comment": "A comment of at least 7 characters is required.",
+    "submit": "Submit"
+  }
+}
+

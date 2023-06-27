@@ -3,7 +3,11 @@ import config from "./config";
 
 import appUsersRoutes from "./routes/appUsers.routes";
 
+const cors = require("cors");
+
 const app = express();
+
+app.use(cors);
 
 // Settings
 
