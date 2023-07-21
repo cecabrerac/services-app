@@ -1,6 +1,7 @@
-import { getConnection, sql } from "../database";
+const { getConnection, sql } = require("../database/connection");
+const cards = require("../database/cards.json");
 
-export const getAllAppUsers = async (req, res) => {
+const getAllAppUsers = async (req, res) => {
   try {
     const pool = await getConnection();
     const result = await pool.request().execute(`spGetAllUsers`);
@@ -11,7 +12,7 @@ export const getAllAppUsers = async (req, res) => {
   }
 };
 
-export const addNewUser = async (req, res) => {
+const addNewUser = async (req, res) => {
   const { name, surname, gender, address, city } = req.body;
   if (name == null || surname == null || gender == null) {
     return res.status(400).json({
@@ -37,7 +38,7 @@ export const addNewUser = async (req, res) => {
   }
 };
 
-export const getUserById = async (req, res) => {
+const getUserById = async (req, res) => {
   const { id } = req.params;
   const pool = await getConnection();
   const result = await pool
@@ -47,7 +48,7 @@ export const getUserById = async (req, res) => {
   res.send(result.recordset[0]);
 };
 
-export const deleteUserById = async (req, res) => {
+const deleteUserById = async (req, res) => {
   const { id } = req.params;
   const pool = await getConnection();
   const result = await pool
@@ -57,7 +58,7 @@ export const deleteUserById = async (req, res) => {
   res.send(result);
 };
 
-export const updateUserById = async (req, res) => {
+const updateUserById = async (req, res) => {
   const { name, surname, gender, address, city } = req.body;
   const { id } = req.params;
   if (name == null || surname == null || gender == null) {
@@ -85,7 +86,7 @@ export const updateUserById = async (req, res) => {
   }
 };
 
-// export const getCountOfUsers = async (req, res) => {
+//  const getCountOfUsers = async (req, res) => {
 //   try {
 //     const pool = await getConnection();
 //     const result = await pool.request().execute(`spCountOfUsers`);
@@ -95,3 +96,24 @@ export const updateUserById = async (req, res) => {
 //     res.send(error.message);
 //   }
 // };
+
+const getCards = (req, res) => {
+  try {
+    const pool = cards;
+    const result = pool;
+    res.json(result);
+  } catch (error) {
+    res.status(500);
+    res.send(error.message);
+  }
+};
+
+module.exports = {
+  addNewUser,
+  deleteUserById,
+  getAllAppUsers,
+  // getCountOfUsers,
+  getUserById,
+  updateUserById,
+  getCards,
+};

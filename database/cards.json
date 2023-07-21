@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "title": "Title 1 from backend",
+      "subtitle": "Subtitle-1",
+      "img": "https://media.istockphoto.com/id/1436217023/photo/exterior-of-a-blue-suburban-home.webp?b=1&s=612x612&w=0&k=20&c=9bA_E6bi430LQiIg7wahxg5aNph5mIzD8SB0oiEtvMs="
+    },
+    {
+      "id": 2,
+      "title": "Title 2 from backend",
+      "subtitle": "Subtitle-2",
+      "img": "https://media.istockphoto.com/id/1449212413/photo/row-houses.webp?b=1&s=612x612&w=0&k=20&c=N6m8NcOHrsyyqKxBVQxVakNcaqbbrpiSSZEnXp9aU_k="
+    },
+    {
+      "id": 3,
+      "title": "Title 3 from backend",
+      "subtitle": "Subtitle-3",
+      "img": "https://media.istockphoto.com/id/1442148484/photo/3d-rendering-of-modern-suburban-house-in-the-garden.webp?b=1&s=612x612&w=0&k=20&c=nDchx0WDIzgjrs3bb5XB6B3BT6E5xkgpy1XYeYnpDjA="
+    }
+]

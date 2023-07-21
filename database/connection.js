@@ -1,5 +1,5 @@
-import sql from "mssql";
-import config from "../config";
+const sql = require("mssql");
+const config = require("../config");
 
 const dbSettings = {
   user: config.dbUser,
@@ -9,20 +9,17 @@ const dbSettings = {
   options: {
     encrypt: true, // for Azure
     trustServerCerticate: true,
+    enableArithAbort: true,
   },
 };
 
-export async function getConnection() {
+const getConnection = async () => {
   try {
     const pool = await sql.connect(dbSettings);
-    // const result = await pool.request().query("SELECT 1");
-    // console.log(result);
     return pool;
   } catch (error) {
     console.error(error);
   }
-}
+};
 
-getConnection();
-
-export { sql };
+module.exports = { sql, getConnection };

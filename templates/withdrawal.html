@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400&display=swap" rel="stylesheet">
+    <title>Withdrawal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        .container {
+            margin: auto;
+            width: 580px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f2f3f8;
+        }
+
+        .line {
+            margin: 0px -10px;
+        }
+
+        .card {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            width: 80%;
+            /* height: 80%; */
+            background-color: white;
+            padding: 0px 10px;
+        }
+
+        hr {
+            height: 5px;
+            background-color: #09c25c;
+            border: none;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            background-color: #09c25c;
+            color: whitesmoke;
+            padding: 10px;
+            border-radius: 20px;
+            font: inherit;
+            box-shadow: 2px 2px 4px rgba(250, 250, 250, 0.4);
+        }
+
+        .btn:hover {
+            background-color: #6ddfa0;
+            color: black;
+        }
+
+        footer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            .container {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="card">
+            <div class="line">
+                <hr>
+            </div>
+
+            <div class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZr8YD5BJjmzqExVMIimRoqUIbfjykzf-AZDJMtcKwoA&s"
+                    alt="logo"
+                    style="width: 100px; height: 100px; filter: contrast(50%); box-shadow: 2px 2px 6px black;">
+            </div>
+            <div class="image" style="display: flex; justify-content: center; margin: auto;">
+                <img src="https://i.ibb.co/8gFgSqJ/opportunity.jpg" alt="Opportunity image" width="400px" height="433px"
+                    style=" margin-top: 20px; margin-bottom: 20px; width: 200px; height: 150px" border="0">
+            </div>
+            <div class="textos">
+                <h2 style="text-align: center; font-weight: bolder;">Hi! <%= name %>
+                </h2>
+                <br>
+                <div class="textos" style="text-align: justify;">
+                    <section class="inform">
+                        <p>We are contacting you to inform you that we have successfully received your withdrawal
+                            request with the following information:
+                        </p>
+                        <br>
+                        <p>Withdrawal type: [withdrwal-type]</p>
+                        <p>Withdrawal ammount: [usd-ammount]</p>
+                        <p>Wallet: [wallet]</p>
+                        <p>Currency: [currency]</p>
+                        <br>
+                        <p>We request confirmation of the data provided by clicking on the CONFIRM WITHDRAWAL DATA
+                            button below, indicating that the data is correct to proceed with the withdrawal.</p>
+                        <br>
+                        <p>Note: We remind you that when withdrawing your capital, if your account remains with less
+                            than 500 usd, you will be disconnected from the financial service.</p>
+                        <p>Greetings and thanks,</p>
+                        <br>
+                        <div style="margin-top: 20px; margin-bottom: 20px; text-align: center;">
+                            <a href="https://www.google.com"><button class="btn">CONFIRM WITHDRAWAL DATA</button></a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; [Company Name]</p>
+            <p>[Address]</p>
+        </footer>
+    </div>
+</body>
+
+</html>
