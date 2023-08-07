@@ -8,6 +8,7 @@ const {
   updateUserById,
   getCards,
 } = require("../controllers/appUsers.controllers");
+const { getAllCards } = require("../controllers/cards.controllers");
 
 const router = Router();
 
@@ -17,6 +18,7 @@ router.get("/appUsers/:id", getUserById);
 router.delete("/appUsers/:id", deleteUserById);
 router.put("/appUsers/:id", updateUserById);
 // router.get("/appUsers/count", getCountOfUsers);
-router.get("/cards", getCards);
+
+router.get("/cards", getAllCards);
 
 module.exports = router;

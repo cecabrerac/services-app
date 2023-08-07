@@ -4,6 +4,7 @@ const getAllCards = async (req, res) => {
   try {
     const pool = await getConnection();
     const result = await pool.request().execute(`spGetAllCards`);
+    console.log(result);
     res.json(result.recordset);
   } catch (error) {
     res.status(500);
