@@ -6,9 +6,12 @@ const {
   getCountOfUsers,
   getUserById,
   updateUserById,
-  getCards,
 } = require("../controllers/appUsers.controllers");
-const { getAllCards } = require("../controllers/cards.controllers");
+const {
+  getAllCards,
+  addNewCard,
+  getCard,
+} = require("../controllers/cards.controllers");
 
 const router = Router();
 
@@ -20,5 +23,7 @@ router.put("/appUsers/:id", updateUserById);
 // router.get("/appUsers/count", getCountOfUsers);
 
 router.get("/cards", getAllCards);
+router.post("/cards", addNewCard);
+router.get("/cards/:id", getCard);
 
 module.exports = router;

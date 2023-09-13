@@ -3,8 +3,8 @@ const { getConnection, sql } = require("../database/connection");
 const getAllCards = async (req, res) => {
   try {
     const pool = await getConnection();
-    const result = await pool.request().execute(`spGetAllCards`);
-    console.log(result);
+    // const result = await pool.request().execute(`spGetAllCards`);
+    const result = await pool.request().query("SELECT * FROM Cards");
     res.json(result.recordset);
   } catch (error) {
     res.status(500);
@@ -24,11 +24,14 @@ const addNewCard = async (req, res) => {
     const pool = await getConnection();
     pool
       .request()
-      .input("id", sql.Int)
+      .input("id", sql.Int, id)
       .input("title", sql.VarChar, title)
       .input("subtitle", sql.VarChar, subtitle)
       .input("img", sql.VarChar, img)
-      .execute(`spAddCard`);
+      // .execute(`spAddCard`);
+      .query(
+        "INSERT INTO Cards (id, title, subtitle, img) VALUES (id, title, subtitle, img); ",
+      );
     res.json({ id, title, subtitle, img });
   } catch (error) {
     res.status(500);
@@ -36,7 +39,22 @@ const addNewCard = async (req, res) => {
   }
 };
 
+async function getCard() {
+  try {
+    const { id } = req.params;
+    const pool = await getConnection();
+    const result = await pool
+      .request()
+      .input("id", sql.Int, id)
+      .query("SELECT * from Cards where id = @id");
+    return result.recordsets;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   getAllCards,
   addNewCard,
+  getCard,
 };
