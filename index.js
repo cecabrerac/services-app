@@ -10,6 +10,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const appUsersRoutes = require("./routes/appUsers.routes");
+const appCardsRoutes = require("./routes/cards.routes");
 
 // env variables
 const { CLIENT_URL, CLIENT_URL2, CLIENT_LOCAL_URL } = process.env;
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //Use routes
 app.use(appUsersRoutes);
+app.use(appCardsRoutes);
 
 // html Bienvenida
 app.engine("html", require("ejs").renderFile);
