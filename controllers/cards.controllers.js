@@ -35,10 +35,25 @@ const addNewCard = async (req, res) => {
   }
 };
 
+const getCard = (req, res) => {
+  const { id } = req.params;
+  let element = "";
+  try {
+    let rawdata = fs.readFileSync("database/cards.json");
+    let data = JSON.parse(rawdata);
+    for (let i = 0; i < data.cards.length; i++) {
+      if (id == data.cards[i].id) element = JSON.stringify(data.cards[i]);
+    }
+    res.json(element);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   getAllCards,
   addNewCard,
-  // getCard,
+  getCard,
 };
 
 // CODE CONNECTED TO DATABASE:
