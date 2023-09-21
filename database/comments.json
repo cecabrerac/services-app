@@ -1,6 +1,16 @@
-{ "comments": [
-    { "id": 0,
-        "text": ""
+{
+  "comments": [
+    {
+      "id": 0,
+      "text": "First comment"
+    },
+    {
+      "id": 1,
+      "text": "Mi comentario desde postman"
+    },
+    {
+      "id": 2,
+      "text": "Mi comentario desde el browser"
     }
-]
+  ]
 }
