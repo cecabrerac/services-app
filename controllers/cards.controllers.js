@@ -42,7 +42,7 @@ const getCard = (req, res) => {
     let rawdata = fs.readFileSync("database/cards.json");
     let data = JSON.parse(rawdata);
     for (let i = 0; i < data.cards.length; i++) {
-      if (id == data.cards[i].id) element = JSON.stringify(data.cards[i]);
+      if (id == data.cards[i].id) element = data.cards[i];
     }
     res.json(element);
   } catch (error) {
