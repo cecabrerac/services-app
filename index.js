@@ -11,6 +11,7 @@ require("dotenv").config();
 
 const appUsersRoutes = require("./routes/appUsers.routes");
 const appCardsRoutes = require("./routes/cards.routes");
+const appCommentsRoutes = require("./routes/comments.routes");
 
 // env variables
 const { CLIENT_URL, CLIENT_URL2, CLIENT_LOCAL_URL } = process.env;
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 //Use routes
 app.use(appUsersRoutes);
 app.use(appCardsRoutes);
+app.use(appCommentsRoutes);
 
 // html Bienvenida
 app.engine("html", require("ejs").renderFile);
